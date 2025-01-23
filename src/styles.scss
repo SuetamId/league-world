@@ -63,5 +63,5 @@ $league-world-theme: mat.define-light-theme((
 @include mat.all-component-themes($league-world-theme);
 
 
-html, body { height: 100%; }
+html, body { height: 100%; background-color: rgb(245, 245, 245);}
 body { margin: 0; font-family: "FF Mark W05", Arial, sans-serif; }
