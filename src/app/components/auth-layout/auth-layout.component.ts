@@ -32,7 +32,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 export class AuthLayoutComponent {
   @Input() errorMessage!: string;
   @Input() form!: FormGroup;
-  @Input() formControls: { label: string, controlName: string, type: string }[] = [];
+  @Input() formControls: { label: string, controlName: string, type: string, hide?:boolean}[] = [];
   @Input() buttonLabel = '';
   @Input() link1Text = '';
   @Input() link2Text = '';

@@ -1,3 +1,9 @@
+@import '../../../config-scss/rem-calc.scss';
 .spacer {
   flex: 1 1 auto;
+}
+.mat-toolbar{
+  & h1{
+    margin-right: rem-calc(10);
+  }
 }

@@ -13,7 +13,6 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
   constructor(private authService: AuthService, private router: Router){}
 
   logout(){
