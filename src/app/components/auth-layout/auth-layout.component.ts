@@ -7,6 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { AuthErrorComponent } from '../auth-error/auth-error.component';
+import { LoaderService } from '../../services/loader.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-auth',
@@ -21,13 +23,13 @@ import { AuthErrorComponent } from '../auth-error/auth-error.component';
     MatCardModule,
     MatIconModule,
     AuthErrorComponent,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './auth-layout.component.html',
   styleUrl: './auth-layout.component.scss'
 })
 
 export class AuthLayoutComponent {
-  cachedImage: string | null = null;
   @Input() errorMessage!: string;
   @Input() form!: FormGroup;
   @Input() formControls: { label: string, controlName: string, type: string }[] = [];
@@ -36,6 +38,8 @@ export class AuthLayoutComponent {
   @Input() link2Text = '';
   @Input() link2Url = '';
   @Output() submit = new EventEmitter<void>();
+
+  constructor(public loaderService: LoaderService){}
 
   onSubmit() {
     if (!this.form.valid) {
