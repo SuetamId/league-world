@@ -29,9 +29,9 @@
           <ng-container>
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>{{ control.label }}</mat-label>
-              <input matInput [formControlName]="control.controlName" [type]="control.hide ? 'password' : 'text'" required />
+              <input matInput [formControlName]="control.controlName" [formControlName]="control.controlName" [type]="getInputType(control)" required />
               @if(control.type === 'password'){
-                <button mat-icon-button matSuffix (click)="control.hide = !control.hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="control.hide">
+                <button mat-icon-button matSuffix type="button" (click)="control.hide = !control.hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="control.hide">
                   <mat-icon color="primary">{{ control.hide ? 'visibility_off' : 'visibility' }}</mat-icon>
                 </button>
               }
