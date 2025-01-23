@@ -1,0 +1,75 @@
+.champions-header-container {
+  padding: 24px;
+
+  & .champions-header-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+
+    & .champions-header {
+      text-align: center;
+      flex-direction: column;
+      -webkit-box-pack: end;
+      justify-content: end;
+      -webkit-box-align: center;
+      max-width: 1056px;
+
+      & .supertitle {
+        font-family: Spiegel, sans-serif;
+        font-weight: 400;
+        word-break: break-word;
+        font-size: 22px;
+        text-transform: uppercase;
+      }
+
+      & .title {
+        text-wrap: balance;
+        word-break: break-word;
+        font-family: "Beaufort for LOL", sans-serif;
+        font-style: italic;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 50px;
+        line-height: 0;
+      }
+
+      & .body {
+        & p {
+          font-family: Spiegel, sans-serif;
+          font-weight: 400;
+          word-break: break-word;
+          font-size: 18px;
+          line-height: 0;
+          line-height: 30px;
+          color: rgb(10, 20, 40);
+
+          & b {
+            color: rgb(194, 143, 44);
+          }
+        }
+
+        & small {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .champions-header-container {
+    width: auto;
+
+    & .champions-header-content {
+      & .champions-header {
+        width: 100%;
+
+        & .title {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

@@ -3,7 +3,15 @@
   flex: 1 1 auto;
 }
 .mat-toolbar{
+  height: rem-calc(80);
+  width: 100%;
   & h1{
     margin-right: rem-calc(10);
   }
+  & .logout-button{
+    border-radius: rem-calc(12);
+  }
+}
+.body{
+  width: 100%;
 }
