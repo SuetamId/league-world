@@ -1,0 +1,13 @@
+<app-auth
+  [form]="loginForm"
+  [formControls]="[
+    { label: 'Seu e-mail', controlName: 'username', type: 'text' },
+    { label: 'Sua senha', controlName: 'password', type: 'password' },
+  ]"
+  buttonLabel="Entrar"
+  link1Text="Não consegue iniciar sessão?"
+  link2Text="Criar conta"
+  link2Url="/register"
+  [errorMessage]="errorMessage"
+  (submit)="onLogin()">
+</app-auth>
