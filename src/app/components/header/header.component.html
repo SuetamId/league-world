@@ -16,10 +16,15 @@
     </g>
   </svg>
   <span class="spacer"></span>
-  <button mat-icon-button color="warn" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
+  <button mat-stroked-button matSuffix>
+    <mat-icon color="warn">favorite</mat-icon>
+    Seus favoritos
   </button>
-  <button mat-flat-button color="accent" aria-label="logout" (click)="logout()">
+  <button mat-flat-button color="accent" aria-label="logout" (click)="logout()" class="logout-button">
     Sair agora
   </button>
 </mat-toolbar>
+<div class="body">
+<router-outlet />
+</div>
+
