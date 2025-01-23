@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AuthErrorComponent } from '../auth-error/auth-error.component';
 import { LoaderService } from '../../services/loader.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FormControlConfig } from '../../models/form-control-config.model';
 
 @Component({
   selector: 'app-auth',
@@ -32,7 +33,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 export class AuthLayoutComponent {
   @Input() errorMessage!: string;
   @Input() form!: FormGroup;
-  @Input() formControls: { label: string, controlName: string, type: string, hide?:boolean}[] = [];
+  @Input() formControls: FormControlConfig[] = [];
   @Input() buttonLabel = '';
   @Input() link1Text = '';
   @Input() link2Text = '';
@@ -46,5 +47,12 @@ export class AuthLayoutComponent {
       return;
     }
     this.submit.emit();
+  }
+
+  getInputType(control: FormControlConfig): string {
+    if (control.type === 'password') {
+      return control.hide ? 'password' : 'text';
+    }
+    return control.type;
   }
 }
