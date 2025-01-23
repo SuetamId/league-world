@@ -1,0 +1,15 @@
+<app-auth
+  [form]="registerForm"
+  [formControls]="[
+    { label: 'Seu nome', controlName: 'name', type: 'text' },
+    { label: 'Seu aniversário', controlName: 'birthDate', type: 'date' },
+    { label: 'Seu E-mail', controlName: 'username', type: 'text' },
+    { label: 'Sua senha', controlName: 'password', type: 'password' },
+  ]"
+  buttonLabel="Cadastrar"
+  link1Text="Já possui conta?"
+  link2Text="Voltar para o login"
+  linkUrl="/login"
+  [errorMessage]="errorMessage"
+  (submit)="onRegister()">
+</app-auth>

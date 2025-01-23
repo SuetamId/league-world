@@ -60,13 +60,8 @@ $league-world-theme: mat.define-light-theme((
   typography: mat.define-typography-config(),
   density: 0
 ));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include mat.all-component-themes($league-world-theme);
 
-/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: "FF Mark W05", Arial, sans-serif; }

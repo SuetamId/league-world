@@ -1,0 +1,51 @@
+<section class="login-container">
+  <section class="login-form">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 32" fill="none" class="league">
+            <g>
+              <path
+                d="M1.80644 9.75049C0.655032 11.8373 0 14.2271 0 16.7683C0 19.3095 0.655032 21.7015 1.80644 23.7883V9.75049Z"
+                fill="#C28F2C"></path>
+              <path
+                d="M15 2.02222C13.7829 2.02222 12.602 2.16921 11.4688 2.43647V4.75718C12.5907 4.44093 13.7738 4.26721 15 4.26721C22.0218 4.26721 27.7153 9.84627 27.7153 16.7305C27.7153 19.8307 26.5571 22.6659 24.6464 24.8463L24.2838 26.118L23.4814 28.9331C27.4184 26.2761 30.0023 21.8195 30.0023 16.7705C30 8.62355 23.2843 2.02222 15 2.02222Z"
+                fill="#C28F2C"></path>
+              <path
+                d="M11.4688 24.4209H22.9737H23.2253C25.1723 22.4209 26.3713 19.7126 26.3713 16.7305C26.3713 10.5746 21.2806 5.58569 15 5.58569C13.767 5.58569 12.5816 5.78168 11.4688 6.1358V24.4209Z"
+                fill="#C28F2C"></path>
+              <path d="M10.1088 0H1.55029L3.16634 3.29844V28.7038L1.55029 32H21.1922L22.9737 25.7572H10.1088V0Z"
+                fill="#C28F2C"></path>
+            </g>
+          </svg>
+          <h1>League World</h1>
+          <p>Aqui, cada campeão tem sua história</p>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <app-auth-error [errorMessage]="errorMessage"></app-auth-error>
+        <form [formGroup]="form" (ngSubmit)="form.valid">
+          @for (control of formControls; track $index) {
+          <ng-container>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>{{ control.label }}</mat-label>
+              <input matInput [formControlName]="control.controlName" [type]="control.type" required />
+            </mat-form-field>
+          </ng-container>
+          }
+          <div class="wrapper-login-actions">
+            <button type="submit" class="login__button" [disabled]="!form.valid" (aria-label)="buttonLabel">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                  d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z" />
+              </svg> </button>
+            <a [(href)]="link2Url" class="login__link">{{ link1Text }}</a>
+            <a [(href)]="link2Url" class="login__link">{{ link2Text }}</a>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </section>
+  <section class="background-image">
+  </section>
+</section>
