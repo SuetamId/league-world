@@ -29,7 +29,7 @@
       @for (spell of championDetails.spells; track $index) {
           <mat-card class="skills-card">
             <mat-card-header>
-              <mat-card-title> {{ getLastLetter(spell.id) }} - {{spell.name}}</mat-card-title>
+              <mat-card-title class="skills-card-title"> {{ getLastLetter(spell.id) }} - {{spell.name}}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <p>{{spell.description}}</p>
@@ -38,10 +38,10 @@
         }
         <mat-card class="skills-card">
           <mat-card-header>
-            <mat-card-title> Passiva - {{championDetails.passive.name}}</mat-card-title>
+            <mat-card-title class="skills-card-title"> Passiva - {{championDetails.passive?.name}}</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>{{championDetails.passive.description}}</p>
+            <p>{{championDetails.passive?.description}}</p>
           </mat-card-content>
         </mat-card>
       </div>
@@ -49,7 +49,7 @@
     <div>
       <div class="container">
         <div class="title">
-          <span>Skins Disponiveis</span>
+          <span>Skins Disponíveis</span>
         </div>
         <div class="content">
           @for (skin of championDetails.skins; track $index) {
@@ -59,10 +59,29 @@
               </mat-card-content>
               <mat-card-footer>
                 <div class="avatar">
+                  <p class="skin-name">{{ skin.name }}</p>
                   <div class="avatar-wrapper">
-                    <img [src]="championDetails.images.icon" alt="{{ championDetails.name }}">
+                    <div class="rune">
+                      <div class="rune-wrapper">
+                        <img src="https://wiki.leagueoflegends.com/en-us/images/thumb/Electrocute_rune.png/55px-Electrocute_rune.png?9d28d" alt="eletrocute">
+                      </div>
+                      <div class="rune-wrapper">
+                        <img src="https://wiki.leagueoflegends.com/en-us/images/thumb/Press_the_Attack_rune.png/55px-Press_the_Attack_rune.png?baa0b" alt="ignite">
+                      </div>
+                    </div>
+                    <div class="profile">
+                      <img [src]="'https://ddragon-webp.lolmath.net/latest/img/profileicon/' + (1000 + $index) + '.webp'" alt="Dynamic Image">
+                    </div>
+                    <div class="spell">
+                      <div class="spell-wrapper">
+                        <img src="https://wiki.leagueoflegends.com/en-us/images/Heal.png?e5e6a" alt="heal">
+                      </div>
+                      <div class="spell-wrapper">
+                        <img src="https://wiki.leagueoflegends.com/en-us/images/Ignite.png?e6f55" alt="ignite">
+                      </div>
+                    </div>
                   </div>
-                  <p>{{ skin.name }}</p>
+                  <p class="nickname">Grupo_Nexus</p>
                 </div>
               </mat-card-footer>
             </mat-card>

@@ -17,6 +17,7 @@ import {MatCardModule} from '@angular/material/card';
 export class ChampionsDetailComponent implements OnInit {
   championName: string | null = null;
   championDetails$!: Observable<ChampionDetails>;
+
   constructor(private route: ActivatedRoute, private championsService: ChampionsService) {}
 
   ngOnInit(): void {

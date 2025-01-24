@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { ChampionSummary } from '../../../../models/champions.model';
+import { ChampionDetails } from '../../../../models/champions.model';
 import { Observable } from 'rxjs';
 import { ChampionsService } from '../../../../services/champions.service';
 import { AsyncPipe } from '@angular/common';
@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
   styleUrl: './champions-list.component.scss'
 })
 export class ChampionsListComponent {
-  champions$!: Observable<ChampionSummary[]>;
+  champions$!: Observable<ChampionDetails[]>;
 
   constructor(private championsService: ChampionsService, private router: Router){
     this.champions$ = this.championsService.getAll();
@@ -26,5 +26,4 @@ export class ChampionsListComponent {
   championDetailsByName(championName: string){
     this.router.navigate([`/champion-details/${championName}`])
   }
-
 }

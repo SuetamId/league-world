@@ -3,9 +3,10 @@
   flex: 1 1 auto;
 }
 .mat-toolbar{
+  position: relative;
   height: rem-calc(80);
   width: 100%;
-
+  z-index: 3;
   & h1{
     margin-right: rem-calc(10);
   }

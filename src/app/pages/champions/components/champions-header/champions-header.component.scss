@@ -18,6 +18,24 @@
       -webkit-box-align: center;
       max-width: rem-calc(1056);
 
+      & .user-logged{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        & span{
+          border: rem-calc(1) solid #1223;
+          padding: rem-calc(10);
+          border-radius: rem-calc(10);
+          margin-bottom: rem-calc(20);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: rem-calc(230);
+
+        }
+      }
+
       & .supertitle {
         font-family: Spiegel, sans-serif;
         font-weight: 400;
@@ -42,9 +60,9 @@
           font-family: Spiegel, sans-serif;
           font-weight: 400;
           word-break: break-word;
-          font-size: 18px;
+          font-size: rem-calc(18);
           line-height: 0;
-          line-height: 30px;
+          line-height: rem-calc(30);
           color: rgb(9, 21, 46);
 
           & b {
