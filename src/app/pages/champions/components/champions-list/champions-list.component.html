@@ -20,12 +20,12 @@
     <mat-card class="champions-card" >
       <mat-card-header>
         <div mat-card-avatar class="header-image">
-          <img [src]="champion.images.icon" alt="{{ champion.name }}" >
+          <img [src]="champion.images.icon" loading="lazy" alt="{{ champion.name }}" >
         </div>
         <mat-card-title>{{ champion.name }}</mat-card-title>
         <mat-card-subtitle>{{ champion.title }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="champion.images.splash" alt="{{ champion.name }}" (click)="championDetailsByName(champion.name)">
+      <img mat-card-image [src]="champion.images.splash" loading="lazy" alt="{{ champion.name }}" (click)="championDetailsByName(champion.name)">
       <mat-card-content>
         <p>{{champion.blurb}}</p>
       </mat-card-content>
@@ -38,6 +38,6 @@
       </mat-card-actions>
     </mat-card>
     }
-    }
+  }
   </div>
 </section>

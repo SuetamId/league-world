@@ -1,0 +1,24 @@
+<form class="search-form" (ngSubmit)="onSearch()" >
+  <div class="search-container">
+    <div class="search-icon">
+        <mat-icon >search</mat-icon>
+    </div>
+    <input
+      type="text"
+      id="default-search"
+      class="search-input"
+      placeholder="Pesquise pelo nome..."
+      matInput
+      [formControl]="searchControl"
+    />
+    <div class="search-button">
+      @if(this.searchControl.value){
+        <mat-icon (click)="onClearSearch()">close</mat-icon>
+      }
+      <button mat-flat-button color="primary" type="submit" class="btn">
+        Encontrar
+      </button>
+    </div>
+
+  </div>
+</form>

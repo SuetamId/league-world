@@ -1,0 +1,62 @@
+@import '../../../../../config-scss/rem-calc.scss';
+
+.search-form {
+  max-width: rem-calc(440);
+  margin: 0 auto;
+  margin-top: rem-calc(20);
+  padding: rem-calc(10);
+
+  & .search-container {
+    position: relative;
+
+    & .search-icon {
+      position: absolute;
+      top: 50%;
+      left: rem-calc(12);
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+
+      mat-icon {
+        color: #6b7280;
+      }
+    }
+
+     & .search-input {
+      width: 90%;
+      height: rem-calc(40);
+      padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+      font-size: rem-calc(13);
+      color: #1f2937;
+      border: 1px solid #d1d5db;
+      border-radius: rem-calc(6);
+      background-color: #f9fafb;
+      outline: none;
+      & mat-icon {
+        cursor: pointer;
+      }
+    }
+
+    & .search-button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: absolute;
+      right: rem-calc(10);
+      bottom: rem-calc(10);
+
+      & .btn{
+      width: rem-calc(70);
+      font-size: rem-calc(12);
+      }
+      & .mat-icon{
+        color: #6b7280;
+        font-size: rem-calc(20);
+        margin-top: rem-calc(5);
+        margin-right: rem-calc(8);
+        cursor: pointer;
+        }
+    }
+  }
+}
