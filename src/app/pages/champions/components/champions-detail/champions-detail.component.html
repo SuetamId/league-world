@@ -2,7 +2,7 @@
   @if(championDetails$ | async; as championDetails){
     <div class="main-banner">
       <div class="backdrop"></div>
-      <img class="main-banner-img" [src]="championDetails.images.splash" alt="{{ championDetails.name }}">
+      <img class="main-banner-img" [src]="championDetails.images.splash" loading="lazy" alt="{{ championDetails.name }}">
       <div class="main-banner-infos">
         <div class="main-banner-top-content">
             <span>{{championDetails.title}}</span>
@@ -12,7 +12,7 @@
               @for (tag of championDetails.tags; track $index) {
                 <div class="roles-info">
                   <div class="roles-wrapper">
-                    <img [src]="getIconForTag(tag)" alt="{{ tag }} icon" />
+                    <img [src]="getIconForTag(tag)" loading="lazy" alt="{{ tag }} icon" />
                     <p>{{getNameForTag(tag)}}</p>
                   </div>
                 </div>
@@ -55,7 +55,7 @@
           @for (skin of championDetails.skins; track $index) {
             <mat-card class="skin-card">
               <mat-card-content>
-                <img [src]="skin.loading" alt="{{ skin.name }}">
+                <img [src]="skin.loading" loading="lazy" alt="{{ skin.name }}">
               </mat-card-content>
               <mat-card-footer>
                 <div class="avatar">
@@ -63,21 +63,21 @@
                   <div class="avatar-wrapper">
                     <div class="rune">
                       <div class="rune-wrapper">
-                        <img src="https://wiki.leagueoflegends.com/en-us/images/thumb/Electrocute_rune.png/55px-Electrocute_rune.png?9d28d" alt="eletrocute">
+                        <img src="https://wiki.leagueoflegends.com/en-us/images/thumb/Electrocute_rune.png/55px-Electrocute_rune.png?9d28d" loading="lazy" alt="eletrocute">
                       </div>
                       <div class="rune-wrapper">
-                        <img src="https://wiki.leagueoflegends.com/en-us/images/thumb/Press_the_Attack_rune.png/55px-Press_the_Attack_rune.png?baa0b" alt="ignite">
+                        <img src="https://wiki.leagueoflegends.com/en-us/images/thumb/Press_the_Attack_rune.png/55px-Press_the_Attack_rune.png?baa0b" loading="lazy" alt="ignite">
                       </div>
                     </div>
                     <div class="profile">
-                      <img [src]="'https://ddragon-webp.lolmath.net/latest/img/profileicon/' + (1000 + $index) + '.webp'" alt="Dynamic Image">
+                      <img [src]="'https://ddragon-webp.lolmath.net/latest/img/profileicon/' + (1000 + $index) + '.webp'" loading="lazy" alt="Dynamic Image">
                     </div>
                     <div class="spell">
                       <div class="spell-wrapper">
-                        <img src="https://wiki.leagueoflegends.com/en-us/images/Heal.png?e5e6a" alt="heal">
+                        <img src="https://wiki.leagueoflegends.com/en-us/images/Heal.png?e5e6a" loading="lazy" alt="heal">
                       </div>
                       <div class="spell-wrapper">
-                        <img src="https://wiki.leagueoflegends.com/en-us/images/Ignite.png?e6f55" alt="ignite">
+                        <img src="https://wiki.leagueoflegends.com/en-us/images/Ignite.png?e6f55" loading="lazy" alt="ignite">
                       </div>
                     </div>
                   </div>
@@ -90,5 +90,4 @@
       </div>
 </div>
   }
-
 </section>
