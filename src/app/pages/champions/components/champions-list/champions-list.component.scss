@@ -31,6 +31,9 @@
       flex-direction: column;
       justify-content: space-between;
 
+      & img{
+        cursor: pointer;
+      }
       & mat-card-header {
         & .header-image {
           & img {
@@ -43,6 +46,7 @@
           font-size: 14px;
           color: #1d1d1d;
           line-height: 1.6;
+          padding: 10px;
         }
       }
     }

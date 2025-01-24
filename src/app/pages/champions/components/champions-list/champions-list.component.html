@@ -17,16 +17,15 @@
     }
     }@else {
     @for (champion of champions$ | async; track $index) {
-    <mat-card class="champions-card">
+    <mat-card class="champions-card" >
       <mat-card-header>
         <div mat-card-avatar class="header-image">
-          <img [src]="champion.images.icon" alt="{{ champion.name }}">
+          <img [src]="champion.images.icon" alt="{{ champion.name }}" >
         </div>
-        <div class="overlay"></div> <!-- Camada com opacidade -->
         <mat-card-title>{{ champion.name }}</mat-card-title>
         <mat-card-subtitle>{{ champion.title }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="champion.images.splash" alt="{{ champion.name }}">
+      <img mat-card-image [src]="champion.images.splash" alt="{{ champion.name }}" (click)="championDetailsByName(champion.name)">
       <mat-card-content>
         <p>{{champion.blurb}}</p>
       </mat-card-content>
@@ -35,7 +34,7 @@
           <mat-icon color="warn">favorite</mat-icon>
           Gostei
         </button>
-        <button mat-button>Detalhes</button>
+        <button mat-button (click)="championDetailsByName(champion.name)">Detalhes</button>
       </mat-card-actions>
     </mat-card>
     }
