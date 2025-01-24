@@ -5,6 +5,7 @@
 .mat-toolbar{
   height: rem-calc(80);
   width: 100%;
+
   & h1{
     margin-right: rem-calc(10);
   }
@@ -14,4 +15,11 @@
 }
 .body{
   width: 100%;
+}
+@media (max-width: 768px) {
+  .mat-toolbar{
+    & h1{
+      display: none;
+    }
+  }
 }

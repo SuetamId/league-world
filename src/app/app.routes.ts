@@ -15,6 +15,10 @@ export const routes: Routes = [
     {
       path: 'home',
       loadComponent: () => import('../app/pages/champions/champions.component').then(c => c.ChampionsComponent),
+    },
+    {
+      path: 'champion-details/:name',
+      loadComponent: () => import('../app/pages/champions/components/champions-detail/champions-detail.component').then(c => c.ChampionsDetailComponent),
     }
   ]
   },

@@ -1,5 +1,7 @@
+@import '../../../../../config-scss/rem-calc.scss';
+
 .champions-header-container {
-  padding: 24px;
+  padding: rem-calc(24);;
 
   & .champions-header-content {
     position: relative;
@@ -14,13 +16,13 @@
       -webkit-box-pack: end;
       justify-content: end;
       -webkit-box-align: center;
-      max-width: 1056px;
+      max-width: rem-calc(1056);
 
       & .supertitle {
         font-family: Spiegel, sans-serif;
         font-weight: 400;
         word-break: break-word;
-        font-size: 22px;
+        font-size: rem-calc(22);
         text-transform: uppercase;
       }
 
@@ -31,7 +33,7 @@
         font-style: italic;
         font-weight: 700;
         text-transform: uppercase;
-        font-size: 50px;
+        font-size: rem-calc(50);
         line-height: 0;
       }
 
@@ -43,7 +45,7 @@
           font-size: 18px;
           line-height: 0;
           line-height: 30px;
-          color: rgb(10, 20, 40);
+          color: rgb(9, 21, 46);
 
           & b {
             color: rgb(194, 143, 44);
@@ -51,7 +53,7 @@
         }
 
         & small {
-          font-size: 15px;
+          font-size: rem-calc(15);
         }
       }
     }
@@ -65,9 +67,8 @@
     & .champions-header-content {
       & .champions-header {
         width: 100%;
-
         & .title {
-          font-size: 30px;
+          font-size: rem-calc(30);
         }
       }
     }

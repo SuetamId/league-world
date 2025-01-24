@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { ChampionsService } from '../../../../services/champions.service';
 import { AsyncPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-champions-list',
@@ -18,8 +19,12 @@ import { MatIconModule } from '@angular/material/icon';
 export class ChampionsListComponent {
   champions$!: Observable<ChampionSummary[]>;
 
-  constructor(private championsService: ChampionsService){
+  constructor(private championsService: ChampionsService, private router: Router){
     this.champions$ = this.championsService.getAll();
+  }
+
+  championDetailsByName(championName: string){
+    this.router.navigate([`/champion-details/${championName}`])
   }
 
 }

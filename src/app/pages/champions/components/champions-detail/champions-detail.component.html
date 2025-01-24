@@ -1,0 +1,75 @@
+<section class="banner">
+  @if(championDetails$ | async; as championDetails){
+    <div class="main-banner">
+      <div class="backdrop"></div>
+      <img class="main-banner-img" [src]="championDetails.images.splash" alt="{{ championDetails.name }}">
+      <div class="main-banner-infos">
+        <div class="main-banner-top-content">
+            <span>{{championDetails.title}}</span>
+            <h1>{{championDetails.name}}</h1>
+            <p>{{championDetails.lore}}</p>
+            <div class="roles">
+              @for (tag of championDetails.tags; track $index) {
+                <div class="roles-info">
+                  <div class="roles-wrapper">
+                    <img [src]="getIconForTag(tag)" alt="{{ tag }} icon" />
+                    <p>{{getNameForTag(tag)}}</p>
+                  </div>
+                </div>
+              }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="title">
+        <span>Habilidades</span>
+      </div>
+      <div class="content">
+      @for (spell of championDetails.spells; track $index) {
+          <mat-card class="skills-card">
+            <mat-card-header>
+              <mat-card-title> {{ getLastLetter(spell.id) }} - {{spell.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{spell.description}}</p>
+            </mat-card-content>
+          </mat-card>
+        }
+        <mat-card class="skills-card">
+          <mat-card-header>
+            <mat-card-title> Passiva - {{championDetails.passive.name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{championDetails.passive.description}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div>
+      <div class="container">
+        <div class="title">
+          <span>Skins Disponiveis</span>
+        </div>
+        <div class="content">
+          @for (skin of championDetails.skins; track $index) {
+            <mat-card class="skin-card">
+              <mat-card-content>
+                <img [src]="skin.loading" alt="{{ skin.name }}">
+              </mat-card-content>
+              <mat-card-footer>
+                <div class="avatar">
+                  <div class="avatar-wrapper">
+                    <img [src]="championDetails.images.icon" alt="{{ championDetails.name }}">
+                  </div>
+                  <p>{{ skin.name }}</p>
+                </div>
+              </mat-card-footer>
+            </mat-card>
+          }
+        </div>
+      </div>
+</div>
+  }
+
+</section>

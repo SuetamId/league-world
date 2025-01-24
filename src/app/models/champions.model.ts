@@ -14,6 +14,7 @@ export interface ChampionDetails {
   name: string;
   title: string;
   lore: string;
+  tags: Array<string>
   images: {
     splash: string;
     icon: string;
@@ -25,4 +26,21 @@ export interface ChampionDetails {
     splash: string;
     loading: string;
   }>;
+  spells: Array<{
+    id: string;
+    name: string;
+    description: string;
+    image: {
+      full: string
+      sprite: string
+    }
+  }>,
+  passive: {
+    name: string;
+    description: string;
+    image: {
+      full: string
+      sprite: string
+    }
+  }
 }
