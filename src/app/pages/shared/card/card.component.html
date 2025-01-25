@@ -1,0 +1,33 @@
+<section class="champions-card-container">
+  <div class="champions-card-content">
+    @if (!(champions$ | async) || (loaderService.loading$ | async)) {
+
+    }@else {
+    @for (champion of champions$ | async; track $index) {
+    <mat-card class="champions-card" >
+      <mat-card-header>
+        <div mat-card-avatar class="header-image">
+          <img [src]="champion.images.icon" loading="lazy" alt="{{ champion.name }}" >
+        </div>
+        <mat-card-title>{{ champion.name }}</mat-card-title>
+        <mat-card-subtitle>{{ champion.title }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="champion.images.splash" loading="lazy" alt="{{ champion.name }}" (click)="itemClick(champion)">
+      <mat-card-content>
+        <p>{{champion.blurb}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        @for (action of actions; track $index) {
+          <button
+          mat-button
+          (click)="action.callback(champion)">
+          <mat-icon [color]="action.iconColor">{{ action.icon }}</mat-icon>
+          {{ action.label }}
+        </button>
+        }
+      </mat-card-actions>
+    </mat-card>
+    }
+  }
+  </div>
+</section>

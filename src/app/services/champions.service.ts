@@ -20,9 +20,9 @@ export class ChampionsService {
     this.searchTermSubject.next(term);
   }
 
-  championDetails(championName: string) {
-    this.router.navigate([`/champion-details/${championName}`])
-    this.updateSearchTerm('')
+  championDetails(champion: ChampionDetails) {
+    this.router.navigate([`/champion-details/${champion.name.trim()}`]);
+    this.updateSearchTerm('');
   }
 
   getAll(): Observable<ChampionDetails[]> {
@@ -30,17 +30,14 @@ export class ChampionsService {
       distinctUntilChanged(),
       switchMap((term: string) => {
         return this.http.get<ChampionDetails[]>(
-          `${environment.api_url_endpoint}/champions?lang=pt_BR`
-        ).pipe(
-          map((champions) => {
-
-            if (!term.trim()) {
-              return champions;
-            }
+          `${environment.api_url_endpoint}/champions?lang=pt_BR`).pipe(
+            map((champions) => {
+              if (!term.trim()) {
+                return champions;
+              }
 
             return champions.filter((champion: ChampionDetails) =>
-              champion.name.toLowerCase().includes(term.toLowerCase())
-            );
+              champion.name.toLowerCase().includes(term.toLowerCase()));
           }),
           catchError((error) => {
             console.error('Erro ao buscar campeões:', error);
@@ -73,7 +70,6 @@ export class ChampionsService {
     this.saveFavoritesToLocalStorage(updatedFavorites);
     this.favoritesSubject.next(updatedFavorites);
     this.snackbarService.openSnackBar(`${champion.name} foi removido dos favoritos!`, 'x')
-
   }
 
   private getFavoritesFromLocalStorage(): ChampionDetails[] {

@@ -1,35 +1,12 @@
-<section class="favorites-card-container">
-  @if ((favorites$ | async); as favorites) {
-    @if(favorites.length <= 0){
-      <div class="favorites-empty-container">
-        <div class="favorites-empty-content">
-          <p class="subtitle">Você não possui nenhum campeão favorito.</p>
-          <p class="description">Volte para a tela principal, explore nossa lista e escolha seus favoritos...</p>
-        </div>
-      </div>
-    } @else {
-      <div class="favorites-card-content">
-      @for (favorite of favorites$ | async; track $index) {
-        <mat-card class="favorites-card">
-          <mat-card-header>
-            <div mat-card-avatar class="header-image">
-              <img [src]="favorite.images.icon" loading="lazy" alt="{{ favorite.name }}">
-            </div>
-            <mat-card-title>{{ favorite.name }}</mat-card-title>
-            <mat-card-subtitle>{{ favorite.title }}</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image [src]="favorite.images.splash" loading="lazy" alt="{{ favorite.name }}"
-            (click)="championDetailsByName(favorite.name)">
-          <mat-card-actions>
-            <button mat-button matSuffix (click)="removeOfFavorite(favorite)">
-              <mat-icon color="warn">delete</mat-icon>
-              Remover
-            </button>
-            <button mat-button (click)="championDetailsByName(favorite.name)">Detalhes</button>
-          </mat-card-actions>
-        </mat-card>
-      }
+@if ((favorites$ | async); as favorites) {
+  @if(favorites.length <= 0){
+  <div class="favorites-empty-container">
+    <div class="favorites-empty-content">
+      <p class="subtitle">Você não possui nenhum campeão favorito.</p>
+      <p class="description">Volte para a tela principal, explore nossa lista e escolha seus favoritos...</p>
     </div>
+  </div>
+  } @else {
+  <app-card [champions$]="favorites$" [actions]="actions"></app-card>
     }
   }
-</section>
