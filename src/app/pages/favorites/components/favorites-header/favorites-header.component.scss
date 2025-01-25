@@ -1,39 +1,25 @@
 @import '../../../../../config-scss/rem-calc.scss';
 
-.champions-header-container {
+.favorite-header-container {
   padding: rem-calc(24);
 
-  & .champions-header-content {
+  & .favorite-header-content {
     position: relative;
     display: flex;
     flex-direction: column;
     -webkit-box-align: center;
     align-items: center;
 
-    & .champions-header {
+    & .back-home-button{
+      border-radius: rem-calc(13);
+    }
+    & .favorite-header {
       text-align: center;
       flex-direction: column;
       -webkit-box-pack: end;
       justify-content: end;
       -webkit-box-align: center;
       max-width: rem-calc(1056);
-
-      & .user-logged{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        & span{
-          border: rem-calc(1) solid #1223;
-          padding: rem-calc(10);
-          border-radius: rem-calc(10);
-          margin-bottom: rem-calc(20);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          max-width: rem-calc(230);
-
-        }
       }
 
       & .supertitle {
@@ -54,36 +40,15 @@
         font-size: rem-calc(50);
         line-height: 0;
       }
-
-      & .body {
-        & p {
-          font-family: Spiegel, sans-serif;
-          font-weight: 400;
-          word-break: break-word;
-          font-size: rem-calc(18);
-          line-height: 0;
-          line-height: rem-calc(30);
-          color: rgb(9, 21, 46);
-
-          & b {
-            color: rgb(194, 143, 44);
-          }
-        }
-
-        & small {
-          font-size: rem-calc(15);
-        }
-      }
     }
   }
-}
 
 @media (max-width: 768px) {
-  .champions-header-container {
+  .favorite-header-container {
     width: auto;
 
-    & .champions-header-content {
-      & .champions-header {
+    & .favorite-header-content {
+      & .favorite-header {
         width: 100%;
         & .title {
           font-size: rem-calc(30);

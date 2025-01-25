@@ -10,6 +10,4 @@ import { InputSearchComponent } from './components/input-search/input-search.com
   templateUrl: './champions.component.html',
   styleUrl: './champions.component.scss'
 })
-export class ChampionsComponent {
-
-}
+export class ChampionsComponent {}

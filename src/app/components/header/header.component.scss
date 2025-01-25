@@ -7,6 +7,10 @@
   height: rem-calc(80);
   width: 100%;
   z-index: 3;
+
+  & svg{
+    cursor: pointer;
+  }
   & h1{
     margin-right: rem-calc(10);
   }

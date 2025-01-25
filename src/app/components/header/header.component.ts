@@ -17,6 +17,12 @@ export class HeaderComponent{
   constructor(private authService: AuthService, private router: Router){
 
   }
+  goToFavorites(){
+    this.router.navigate(['/favorites']);
+  }
+  goToHome(){
+    this.router.navigate(['/home']);
+  }
 
   logout(){
     this.authService.logout();

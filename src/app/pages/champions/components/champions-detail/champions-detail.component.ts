@@ -8,11 +8,12 @@ import { tagsClassesIcons, tagsClassesName } from '../../../../utility/map-utils
 import {MatCardModule} from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
 import { SkinDialogComponent } from '../skin-dialog/skin-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-champions-detail',
   standalone: true,
-  imports: [AsyncPipe,MatCardModule],
+  imports: [AsyncPipe,MatCardModule, MatButtonModule],
   templateUrl: './champions-detail.component.html',
   styleUrl: './champions-detail.component.scss'
 })
