@@ -30,7 +30,7 @@
         <p>{{champion.blurb}}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button matSuffix>
+        <button mat-button matSuffix (click)="addToFavorite(champion)">
           <mat-icon color="warn">favorite</mat-icon>
           Gostei
         </button>

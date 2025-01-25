@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="mat-toolbar">
   <h1>League World</h1>
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 32" fill="none" class="league">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 32" fill="none" class="league" (click)="goToHome()">
     <g>
       <path
         d="M1.80644 9.75049C0.655032 11.8373 0 14.2271 0 16.7683C0 19.3095 0.655032 21.7015 1.80644 23.7883V9.75049Z"
@@ -16,7 +16,7 @@
     </g>
   </svg>
   <span class="spacer"></span>
-  <button mat-stroked-button matSuffix>
+  <button mat-stroked-button matSuffix (click)="goToFavorites()">
     <mat-icon color="warn">favorite</mat-icon>
     Favoritos
   </button>
