@@ -53,7 +53,7 @@
         </div>
         <div class="content">
           @for (skin of championDetails.skins; track $index) {
-            <mat-card class="skin-card">
+            <mat-card class="skin-card" (click)="showSkinDatails(skin)">
               <mat-card-content>
                 <img [src]="skin.loading" loading="lazy" alt="{{ skin.name }}">
               </mat-card-content>

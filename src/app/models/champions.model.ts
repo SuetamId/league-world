@@ -10,12 +10,7 @@ export interface ChampionDetails {
     icon: string;
     loading: string;
   };
-  skins?: Array<{
-    id: string;
-    name: string;
-    splash: string;
-    loading: string;
-  }>;
+  skins?: Array<ChampionSkins>;
   spells?: Array<{
     id: string;
     name: string;
@@ -33,4 +28,11 @@ export interface ChampionDetails {
       sprite: string
     }
   }
+}
+
+export interface ChampionSkins {
+  id: string;
+  name: string;
+  splash: string;
+  loading: string;
 }

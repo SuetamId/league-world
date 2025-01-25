@@ -1,6 +1,6 @@
 <section class="champions-card-container">
   <div class="champions-card-content">
-    @if (!(champions$ | async)) {
+    @if (!(champions$ | async) || (loaderService.loading$ | async)) {
     @for (let of [1, 2, 3, 4]; track $index) {
     <mat-card class="champions-card skeleton-card">
       <mat-card-header>

@@ -3,7 +3,7 @@
 .banner {
   & .main-banner {
     position: relative;
-    min-height: 850px;
+    min-height: rem-calc(850);
     display: flex;
     flex-direction: column;
 
@@ -35,15 +35,15 @@
       color: white;
       z-index: 1;
       width: 100%;
-      padding: 20px;
+      padding: rem-calc(20);
       display: flex;
       align-items: center;
       justify-content: center;
 
       & .roles {
         border: 1px solid rgb(255, 255, 255);
-        padding: 10px;
-        border-radius: 10px;
+        padding: rem-calc(10);
+        border-radius: rem-calc(10);
         display: flex;
         align-items: center;
 
@@ -56,7 +56,7 @@
           & .roles-wrapper {
             display: flex;
             align-items: center;
-            margin-right: 10px;
+            margin-right: rem-calc(10);
           }
         }
       }
@@ -69,17 +69,17 @@
         align-items: self-start;
 
         & h1 {
-          font-size: 80px;
+          font-size: rem-calc(80);
           font-weight: 800;
-          line-height: 40px;
+          line-height: rem-calc(40);
           font-style: italic;
           text-transform: uppercase;
         }
 
         & p {
-          font-size: 20px;
+          font-size: rem-calc(20);
           font-weight: 700;
-          line-height: 30px;
+          line-height: rem-calc(30);
           width: 60%;
         }
 
@@ -89,8 +89,8 @@
           word-break: break-word;
           font-family: "Beaufort for LOL", sans-serif;
           font-weight: 700;
-          font-size: 32px;
-          line-height: 40px;
+          font-size: rem-calc(32);
+          line-height: rem-calc(40);
           font-style: italic;
           text-transform: uppercase;
         }
@@ -131,21 +131,21 @@
           color: #323232;
 
           & h1 {
-            font-size: 36px;
+            font-size: rem-calc(36);
             font-weight: 800;
-            line-height: 22px;
+            line-height: rem-calc(22);
           }
 
           & p {
-            font-size: 13px;
+            font-size: rem-calc(13);
             font-weight: 600;
-            line-height: 25px;
+            line-height: rem-calc(25);
             width: 100%;
           }
 
           & span {
-            font-size: 18px;
-            line-height: 40px;
+            font-size: rem-calc(18);
+            line-height: rem-calc(40);
           }
         }
       }
@@ -157,7 +157,7 @@
 
       & .title {
         & span {
-          font-size: 36px;
+          font-size: rem-calc(36);
           color: #323232;
         }
       }
@@ -167,9 +167,9 @@
 
         & .skills-card {
           & mat-card-content {
-            font-size: 13px;
+            font-size: rem-calc(13);
             font-weight: 400;
-            line-height: 25px;
+            line-height: rem-calc(25);
           }
         }
       }
@@ -226,7 +226,7 @@
         padding: rem-calc(16);
 
         & p {
-          font-size: 14px;
+          font-size: rem-calc(14);
           color: #1d1d1d;
           line-height: 1.6;
         }
