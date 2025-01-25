@@ -9,7 +9,7 @@ import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-champions-list',
   standalone: true,
-  imports: [CardComponent, AsyncPipe],
+  imports: [CardComponent,AsyncPipe],
   templateUrl: './champions-list.component.html',
   styleUrl: './champions-list.component.scss'
 })

@@ -1,9 +1,11 @@
+
 @if ((champions$ | async); as champions) {
-  @if(champions.length <= 0){
-    <h3>Não encontramos nada</h3>
+  @if(champions.length <= 0 && !(loaderService.loading$ | async)){
+    <div class="empty-content">
+      <p class="subtitle">Não encontramos nenhum resultado com sua busca!.</p>
+  </div>
   }
 }
-
 <app-card
 [champions$]="champions$"
 [actions]="actions"
