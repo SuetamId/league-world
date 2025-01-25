@@ -3,31 +3,17 @@ export interface ChampionDetails {
   name: string;
   title: string;
   lore?: string;
-  blurb: string;
-  tags?: Array<string>
+  blurb?: string;
+  tags?: Array<string>;
   images: {
     splash: string;
     icon: string;
     loading: string;
   };
+  stats: ChampionStats;
   skins?: Array<ChampionSkins>;
-  spells?: Array<{
-    id: string;
-    name: string;
-    description: string;
-    image: {
-      full: string
-      sprite: string
-    }
-  }>,
-  passive?: {
-    name: string;
-    description: string;
-    image: {
-      full: string
-      sprite: string
-    }
-  }
+  spells?: Array<ChampionSpell>;
+  passive?: ChampionPassive;
 }
 
 export interface ChampionSkins {
@@ -35,4 +21,35 @@ export interface ChampionSkins {
   name: string;
   splash: string;
   loading: string;
+}
+
+export interface ChampionSpell {
+  id: string;
+  name: string;
+  description: string;
+  image: {
+    full: string;
+    sprite: string;
+  };
+}
+
+export interface ChampionPassive {
+  name: string;
+  description: string;
+  image: {
+    full: string;
+    sprite: string;
+  };
+}
+
+export interface ChampionStats{
+  hp:number;
+  armor: number;
+}
+
+export interface ChampionAction {
+  label: string;
+  icon: string;
+  iconColor?: string;
+  callback: (item: ChampionDetails) => void;
 }

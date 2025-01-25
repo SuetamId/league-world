@@ -8,6 +8,4 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './favorites-header.component.html',
   styleUrl: './favorites-header.component.scss'
 })
-export class FavoritesHeaderComponent {
-
-}
+export class FavoritesHeaderComponent {}

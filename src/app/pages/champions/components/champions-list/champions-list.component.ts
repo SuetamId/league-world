@@ -1,24 +1,34 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { ChampionDetails } from '../../../../models/champions.model';
+import { ChampionAction, ChampionDetails } from '../../../../models/champions.model';
 import { Observable } from 'rxjs';
 import { ChampionsService } from '../../../../services/champions.service';
-import { AsyncPipe } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
 import { LoaderService } from '../../../../services/loader.service';
+import { CardComponent } from '../../../shared/card/card.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-champions-list',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatGridListModule, AsyncPipe, MatIconModule],
+  imports: [CardComponent, AsyncPipe],
   templateUrl: './champions-list.component.html',
   styleUrl: './champions-list.component.scss'
 })
 export class ChampionsListComponent {
   champions$!: Observable<ChampionDetails[]>;
+  actions: ChampionAction[] = [
+    {
+      label: 'Favoritos',
+      icon: 'favorite',
+      iconColor: 'warn',
+      callback: (champion: ChampionDetails) => this.addToFavorite(champion),
+    },
+    {
+      label: 'Detalhes',
+      icon: 'info',
+      iconColor: 'accent',
+      callback: (champion: ChampionDetails) => this.championDetailsByName(champion),
+    },
+  ];
 
   constructor(private championsService: ChampionsService, public loaderService: LoaderService) {
     this.champions$ = this.championsService.getAll();
@@ -26,8 +36,7 @@ export class ChampionsListComponent {
   addToFavorite(champion: ChampionDetails): void {
     this.championsService.addFavorite(champion);
   }
-
-  championDetailsByName(championName: string) {
-    this.championsService.championDetails(championName);
+  championDetailsByName(champion: ChampionDetails) {
+    this.championsService.championDetails(champion);
   }
 }

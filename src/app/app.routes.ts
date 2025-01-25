@@ -8,23 +8,23 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-  path: '',
-  loadComponent: () => import('../app/components/header/header.component').then(c => c.HeaderComponent),
-  canActivate: [authGuard],
-  children:[
-    {
-      path: 'home',
-      loadComponent: () => import('../app/pages/champions/champions.component').then(c => c.ChampionsComponent),
-    },
-    {
-      path: 'favorites',
-      loadComponent: () => import('../app/pages/favorites/favorites.component').then(c => c.FavoritesComponent),
-    },
-    {
-      path: 'champion-details/:name',
-      loadComponent: () => import('../app/pages/champions/components/champions-detail/champions-detail.component').then(c => c.ChampionsDetailComponent),
-    }
-  ]
+    path: '',
+    loadComponent: () => import('../app/components/header/header.component').then(c => c.HeaderComponent),
+    canActivate: [authGuard],
+    children: [
+      {
+        path: 'home',
+        loadComponent: () => import('../app/pages/champions/champions.component').then(c => c.ChampionsComponent),
+      },
+      {
+        path: 'favorites',
+        loadComponent: () => import('../app/pages/favorites/favorites.component').then(c => c.FavoritesComponent),
+      },
+      {
+        path: 'champion-details/:name',
+        loadComponent: () => import('../app/pages/champions/components/champions-detail/champions-detail.component').then(c => c.ChampionsDetailComponent),
+      }
+    ]
   },
   {
     path: 'login',

@@ -1,4 +1,4 @@
-@import '../../../../../config-scss/rem-calc.scss';
+@import '../../../../config-scss/rem-calc.scss';
 
 .search-form {
   max-width: rem-calc(440);
@@ -23,7 +23,7 @@
       }
     }
 
-     & .search-input {
+    & .search-input {
       width: 90%;
       height: rem-calc(40);
       padding: 0.5rem 0.75rem 0.5rem 2.5rem;

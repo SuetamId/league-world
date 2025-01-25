@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ChampionsService } from '../../../../services/champions.service';
+import { ChampionsService } from '../../../services/champions.service';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -21,7 +21,7 @@ export class InputSearchComponent {
   }
 
   onClearSearch(): void {
-    this.searchControl.reset()
+    this.searchControl.reset();
     this.championsService.updateSearchTerm(this.searchControl.getRawValue() || '');
   }
 }
