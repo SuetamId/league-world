@@ -1,4 +1,4 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -11,9 +11,10 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    LoaderService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: LoaderInterceptor, // Aqui você usa o interceptor que implementa HttpInterceptor
+      useClass: LoaderInterceptor,
       multi: true,
     },
     {
@@ -27,7 +28,9 @@ export const appConfig: ApplicationConfig = {
 
     },
     provideHttpClient(withInterceptorsFromDi()),
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(),
-    provideRouter(routes), provideAnimationsAsync(),
+    provideRouter(routes),
+    provideAnimationsAsync(),
   ]
 };

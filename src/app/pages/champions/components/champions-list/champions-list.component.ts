@@ -8,6 +8,7 @@ import { ChampionsService } from '../../../../services/champions.service';
 import { AsyncPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { LoaderService } from '../../../../services/loader.service';
 
 @Component({
   selector: 'app-champions-list',
@@ -19,11 +20,12 @@ import { Router } from '@angular/router';
 export class ChampionsListComponent {
   champions$!: Observable<ChampionDetails[]>;
 
-  constructor(private championsService: ChampionsService, private router: Router){
+  constructor(private championsService: ChampionsService, private router: Router, public loaderService: LoaderService){
     this.champions$ = this.championsService.getAll();
   }
 
   championDetailsByName(championName: string){
     this.router.navigate([`/champion-details/${championName}`])
+    this.championsService.updateSearchTerm('')
   }
 }

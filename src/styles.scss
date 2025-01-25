@@ -64,9 +64,13 @@ body {
   .mat-mdc-card-content {
     padding: 0;
   }
+
   .mat-mdc-card-content:first-child {
     padding-top: 0;
-}
+  }
+  .mat-mdc-dialog-content{
+    padding: 0 !important;
+  }
 }
 
 body {
