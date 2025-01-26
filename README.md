@@ -153,9 +153,10 @@ Foram implementados alguns testes unitários para componentes e serviços utiliz
   ```
 ---
 
-## 📈 **Possíveis Melhorias Futuras**
+## 📈 **Melhorias Futuras**
 - **Frontend** Implementação de testes de ponta a ponta (E2E) com **Cypress**.
 - **Frontend** Criptografia das senhas.
+- **Frontend** Lista de desejo para as skins.
 - **API** Melhorias na performance da aplicação, incluindo paginação.
 - **API / Frontend** Persistencia de favoritos no banco de dados e endpoint para retorno.
 ---
