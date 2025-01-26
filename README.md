@@ -64,7 +64,7 @@ A aplicação consome uma API RESTful para fornecer as informações dinâmicas,
       - Runas
       - Magias
       - Icone de perfil do jogador (Dinâmico)
-      - Nome do jogador - **Grupo_Nexus** (O nome Nexus faz referência ao jogo, mas também pode ser considerado um trocadilho divertido com o nome da empresa - **Grupo Nexxes**)
+      - Nome do jogador - **Grupo_Nexus** (O nome Nexus faz referência ao jogo, mas também pode ser considerado um trocadilho divertido com o nome da empresa - **Grupo Nexxees**)
 - Exibição das imagens de skins ampliadas em um **Modal**.
 - Integração com a API para obter todas as informações disponíveis.
 
