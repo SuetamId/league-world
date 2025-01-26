@@ -16,7 +16,7 @@
 ---
 
 ## 🚀 **Sobre o Projeto**
-Este projeto foi desenvolvido como parte de um teste técnico para a posição de Analista de Sistemas - Angular para Grupo Nexxes. A aplicação é uma SPA (Single Page Application) desenvolvida em Angular, que permite aos usuários:
+Este projeto foi desenvolvido para um teste técnico para a posição de Analista de Sistemas - Angular do ***Grupo Nexxes***. A aplicação é uma SPA (Single Page Application) desenvolvida em Angular, que permite aos usuários:
 
 - Realizar login e registro.
 - Listar campeões e filtrar por nome.
