@@ -10,7 +10,7 @@ export interface ChampionDetails {
     icon: string;
     loading: string;
   };
-  stats: ChampionStats;
+  stats?: ChampionStats;
   skins?: Array<ChampionSkins>;
   spells?: Array<ChampionSpell>;
   passive?: ChampionPassive;

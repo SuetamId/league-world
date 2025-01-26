@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FavoritesComponent } from './favorites.component';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('FavoritesComponent', () => {
   let component: FavoritesComponent;
@@ -8,10 +9,11 @@ describe('FavoritesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FavoritesComponent]
+      imports: [FavoritesComponent],
+      providers:[HttpClient, HttpHandler]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(FavoritesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
