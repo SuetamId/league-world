@@ -26,7 +26,6 @@
         <app-auth-error [errorMessage]="errorMessage"></app-auth-error>
         <form [formGroup]="form" (ngSubmit)="form.valid">
           @for (control of formControls; track $index) {
-          <ng-container>
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>{{ control.label }}</mat-label>
               <input matInput [formControlName]="control.controlName" [formControlName]="control.controlName" [type]="getInputType(control)" required />
@@ -36,7 +35,6 @@
                 </button>
               }
             </mat-form-field>
-          </ng-container>
           }
           <div class="wrapper-login-actions">
             <button type="submit" class="login__button" [disabled]="!form.valid" (aria-label)="buttonLabel">

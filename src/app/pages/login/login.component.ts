@@ -3,14 +3,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { AuthLayoutComponent } from '../../components/auth-layout/auth-layout.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SnackBarService } from '../../services/snack-bar.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
-    AuthLayoutComponent
+    AuthLayoutComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
