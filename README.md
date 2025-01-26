@@ -8,7 +8,7 @@
 4. [Como Executar o Projeto](#️-como-executar-o-projeto)
 5. [Detalhes da API](#-detalhes-da-api)
 6. [Testes](#-testes)
-7. [Melhorias Futuras](#-possíveis-melhorias-futuras)
+7. [Melhorias Futuras](#-melhorias-futuras)
 8. [Demo publicada](#️-demo-publicada)
 9. [Contribuição](#-contribuição)
 10. [Licença](#-licença)
