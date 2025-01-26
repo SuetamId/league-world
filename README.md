@@ -155,6 +155,7 @@ Foram implementados alguns testes unitários para componentes e serviços utiliz
 
 ## 📈 **Possíveis Melhorias Futuras**
 - **Frontend** Implementação de testes de ponta a ponta (E2E) com **Cypress**.
+- **Frontend** Criptografia das senhas.
 - **API** Melhorias na performance da aplicação, incluindo paginação.
 - **API / Frontend** Persistencia de favoritos no banco de dados e endpoint para retorno.
 ---
