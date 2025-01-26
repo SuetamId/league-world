@@ -1,13 +1,15 @@
+@import '../../../../config-scss/rem-calc.scss';
+
 .champions-card-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  padding: rem-calc(50);
 
   .champions-card-content {
     display: grid;
     width: 100%;
-    gap: 16px;
+    gap: rem-calc(16);
     grid-template-columns: repeat(4, 1fr);
 
     @media (max-width: 1280px) {
@@ -25,7 +27,7 @@
     & .champions-card {
       width: 100%;
       border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: rem-calc(8);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -42,11 +44,16 @@
         }
       }
       & mat-card-content {
+
         & p {
-          font-size: 14px;
+          font-size: rem-calc(14);
+          max-height: rem-calc(93);
           color: #1d1d1d;
-          line-height: 1.6;
-          padding: 10px;
+          line-height: 1.5;
+          padding: rem-calc(10);
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     }

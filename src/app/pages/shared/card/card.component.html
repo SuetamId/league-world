@@ -14,7 +14,7 @@
         <mat-card-title>{{ champion.name }}</mat-card-title>
         <mat-card-subtitle>{{ champion.title }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="champion.images.splash" loading="lazy" alt="{{ champion.name }}" (click)="itemClick(champion)">
+      <img mat-card-image [src]="champion.images.splash" loading="lazy" alt="{{ champion.name }}" (click)="actions[1].callback(champion)">
       <mat-card-content>
         <p>{{champion.blurb}}</p>
       </mat-card-content>

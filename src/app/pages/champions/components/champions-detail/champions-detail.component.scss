@@ -34,7 +34,7 @@
       transform: translate(-50%, -50%);
       color: white;
       z-index: 1;
-      width: 100%;
+      width: 90%;
       padding: rem-calc(20);
       display: flex;
       align-items: center;
@@ -142,6 +142,7 @@
             line-height: rem-calc(25);
             width: 100%;
           }
+
 
           & span {
             font-size: rem-calc(18);
