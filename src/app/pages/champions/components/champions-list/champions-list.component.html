@@ -3,10 +3,7 @@
   @if(champions.length <= 0 && !(loaderService.loading$ | async)){
     <div class="empty-content">
       <p class="subtitle">Não encontramos nenhum resultado com sua busca!.</p>
-  </div>
+    </div>
   }
 }
-<app-card
-[champions$]="champions$"
-[actions]="actions"
-></app-card>
+<app-card [champions$]="champions$" [actions]="actions"></app-card>

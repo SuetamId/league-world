@@ -23,6 +23,7 @@
     }
   }
 }
+
 @mixin shimmer($color1: #f0f0f0, $color2: #e0e0e0) {
   background: linear-gradient(90deg, $color1 25%, $color2 50%, $color1 75%);
   background-size: 400% 100%;
