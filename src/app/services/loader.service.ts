@@ -9,10 +9,10 @@ export class LoaderService {
   public loading$ = this._loading.asObservable();
 
   show(){
-    return this._loading.next(true);
+    this._loading.next(true);
   }
 
   hide() {
-    return this._loading.next(false);
+    this._loading.next(false);
   }
 }

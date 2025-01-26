@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthLayoutComponent } from '../../components/auth-layout/auth-layout.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,15 +12,13 @@ import { SnackBarService } from '../../services/snack-bar.service';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   registerForm!: FormGroup;
   errorMessage!: string;
 
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private snackBarService: SnackBarService) {
     this.createForm();
   }
-
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private snackBarService: SnackBarService) { }
 
   createForm() {
     this.registerForm = this.fb.group({
