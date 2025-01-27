@@ -82,6 +82,7 @@ A aplicação consome uma API RESTful para fornecer as informações dinâmicas,
 - **Funcionalidade de favoritos:** É possivel favoritar os campeões que mais combina com você.
 - **Area de favoritos:** A aplicação permite o gerenciamento dos favoritos.
 - **Loader/Skeleton:** Implementação de loader do tipo skeleton para os cards.
+- **Convert px em rem:** Implementação de um metodo que permite trabalhar em px, mas converte em rem para o navegador.
 - **Lazy Loading:** Implementação de Lazy loagind para rotas e carregamento das imagens.
 - **Teste unitarios:** Implementação de testes unitarios para alguns `Componentes` e `Serviços`.
 
